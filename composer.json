@@ -1,6 +1,20 @@
 {
+    "name": "slim3/authentication",
+    "description": "authentication",
+    "type": "project",
+    "authors": [
+        {
+            "name": "iansummerlin",
+            "email": "isummerlin95@gmail.com"
+        }
+    ],
     "require": {
         "slim/slim": "^3.0",
         "slim/twig-view": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
     }
 }
