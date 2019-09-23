@@ -56,5 +56,7 @@ $container['AuthController'] = function ($container) {
     return new \App\Controllers\Auth\AuthController($container);
 };
 
+$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
+
 require __DIR__ . '/../app/routes.php';
 
