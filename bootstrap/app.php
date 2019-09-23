@@ -44,6 +44,10 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+$container['validator'] = function ($container) {
+    return new App\Validation\Validator;
+};
+
 $container['HomeController'] = function ($container) {
     return new \App\Controllers\HomeController($container);
 };
