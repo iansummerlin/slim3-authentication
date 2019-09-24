@@ -34,4 +34,9 @@ class Auth
 
         return false;
     }
+
+    public function logout()
+    {
+        unset($_SESSION['user']);
+    }
 }
