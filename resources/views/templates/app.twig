@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slim3 || {% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ base_url() }}/css/app.css"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ base_url() }}/css/app.css"> 
 </head>
 <body>
+    {% include "templates/partials/flash.twig" %}
     {% include "templates/partials/navigation.twig" %}
     <div class="container">
         {% block content %}{% endblock %}
