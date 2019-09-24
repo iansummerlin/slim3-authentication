@@ -34,7 +34,7 @@ class AuthController extends Controller
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }
 
-        $this->flash->addMessage('success', 'You have signed in!');
+        $this->flash->addMessage('success', 'You have signed in');
 
         return $response->withRedirect($this->router->pathFor('home'));
     }
