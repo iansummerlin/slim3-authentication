@@ -17,7 +17,8 @@ class PasswordController extends Controller
     {
         $validation = $this->validator->validate($request, [
             'password_old' => v::noWhitespace()->notEmpty()->matchesPassword($this->auth->user()->password),
-            'password' =>v::noWhitespace()->notEmpty()
+            'password' => v::noWhitespace()->notEmpty(),
+            'password_new' => v::noWhitespace()->notEmpty()->confirmPassword($request->getParam('password'))
         ]);
 
         if ($validation->failed()) {

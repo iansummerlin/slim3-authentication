@@ -52,6 +52,7 @@ class AuthController extends Controller
             'email' => v::noWhitespace()->notEmpty()->email()->emailAvailable(),
             'username' => v::noWhitespace()->notEmpty(),
             'password' => v::noWhitespace()->notEmpty(),
+            'password_new' => v::noWhitespace()->notEmpty()->confirmPassword($request->getParam('password'))
 
         ]);
 
