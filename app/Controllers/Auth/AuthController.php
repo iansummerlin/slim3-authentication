@@ -12,7 +12,7 @@ class AuthController extends Controller
     {
         $this->auth->logout();
 
-        $this->flash->addMessage('info', 'You have been signed out!');
+        $this->flash->addMessage('success', 'You have signed out');
 
         return $response->withRedirect($this->router->pathFor('home'));
     }
@@ -30,11 +30,11 @@ class AuthController extends Controller
         );
 
         if (!$auth) {
-            $this->flash->addMessage('error', 'Sign in unsuccessful!');
+            $this->flash->addMessage('error', 'Sign in unsuccessful');
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }
 
-        $this->flash->addMessage('info', 'You have been signed in!');
+        $this->flash->addMessage('success', 'You have signed in!');
 
         return $response->withRedirect($this->router->pathFor('home'));
     }
@@ -56,7 +56,7 @@ class AuthController extends Controller
         ]);
 
         if ($validation->failed()) {
-            $this->flash->addMessage('error', 'Sign up unsuccessful!');
+            $this->flash->addMessage('error', 'Sign up unsuccessful');
             return $response->withRedirect($this->router->pathFor('auth.signup'));
         }
 
@@ -68,7 +68,7 @@ class AuthController extends Controller
             'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
         ]);
 
-        $this->flash->addMessage('info', 'You have been signed up');
+        $this->flash->addMessage('success', 'You have signed up');
 
         $this->auth->attempt($user->username, $request->getParam('password'));
 

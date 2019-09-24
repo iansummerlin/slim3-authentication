@@ -1,7 +1,7 @@
-{% if flash.getMessage('info') %}
+{% if flash.getMessage('success') %}
 
-    <div class="alert alert-info">
-        {{ flash.getMessage('info') | first }}
+    <div class="alert alert-success">
+        {{ flash.getMessage('success') | first }}
     </div>
 
 {% endif %}
